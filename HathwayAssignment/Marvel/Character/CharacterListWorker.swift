@@ -1,0 +1,36 @@
+//
+//  CharacterListWorker.swift
+//  HathwayAssignment
+//
+//  Created by Vidya Sravani on 7/15/21.
+//
+
+import Foundation
+
+protocol CharacterListWorkerProtocol: AnyObject {
+    func fetchCharacterList(completion: @escaping (Result<[MarvelCharacter], Error>) -> Void)
+}
+
+final class CharacterListWorker: CharacterListWorkerProtocol {
+    private let service: ServiceRequest
+    private var offset = 0
+
+    init(service: ServiceRequest = NetworkClient()) {
+        self.service = service
+    }
+
+    func fetchCharacterList(completion: @escaping (Result<[MarvelCharacter], Error>) -> Void) {
+        let request = MarvelRequest.characterList(offset)
+        service.requestCodable(request, to: MarvelCharacterResponse.self) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.offset += MarvelAPIConstants.responseLimit
+                completion(.success(response.data.results))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
+

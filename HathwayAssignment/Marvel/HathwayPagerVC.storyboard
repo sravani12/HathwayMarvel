@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LoV-iB-zVo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hathway Pager-->
+        <scene sceneID="dql-bW-rh5">
+            <objects>
+                <viewController storyboardIdentifier="HathwayPagerVC" id="LoV-iB-zVo" userLabel="Hathway Pager" customClass="HathwayPagerVC" customModule="HathwayAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x2F-YV-4g0"/>
+                        <viewControllerLayoutGuide type="bottom" id="KYj-Rc-p7l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Iu-OS-asE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTQ-8M-GG8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F6J-Vg-EpW" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="u8d-9j-JSZ"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hL6-jZ-kZ7">
+                                    <size key="itemSize" width="40" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pzl-ea-OVI"/>
+                        <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BTQ-8M-GG8" secondAttribute="trailing" id="Ngu-UG-Jxw"/>
+                            <constraint firstAttribute="trailing" secondItem="F6J-Vg-EpW" secondAttribute="trailing" id="Pd0-mP-DAB"/>
+                            <constraint firstItem="F6J-Vg-EpW" firstAttribute="top" secondItem="x2F-YV-4g0" secondAttribute="bottom" id="VVg-O6-IXQ"/>
+                            <constraint firstItem="BTQ-8M-GG8" firstAttribute="leading" secondItem="0Iu-OS-asE" secondAttribute="leading" id="gsD-Nd-nCB"/>
+                            <constraint firstItem="KYj-Rc-p7l" firstAttribute="top" secondItem="BTQ-8M-GG8" secondAttribute="bottom" id="kT8-oe-NcG"/>
+                            <constraint firstItem="BTQ-8M-GG8" firstAttribute="top" secondItem="F6J-Vg-EpW" secondAttribute="bottom" id="krZ-MH-F8H"/>
+                            <constraint firstItem="F6J-Vg-EpW" firstAttribute="leading" secondItem="0Iu-OS-asE" secondAttribute="leading" id="mIT-Ab-GTk"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="FIND FRIENDS" id="EXN-M2-iFK"/>
+                    <connections>
+                        <outlet property="buttonBarView" destination="F6J-Vg-EpW" id="USH-QB-vLo"/>
+                        <outlet property="containerView" destination="BTQ-8M-GG8" id="hWC-fL-gXC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JEb-ql-42W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="80"/>
+        </scene>
+    </scenes>
+</document>

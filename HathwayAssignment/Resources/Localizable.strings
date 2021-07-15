@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  HathwayAssignment
+
+  Created by Vidya Sravani on 7/15/21.
+  
+*/
+
+"CharacterList.NavigationBar.Title" = "Marvel Heroes";
+
+"CharacterDetail.NameHeader" = "Name:";
+"CharacterDetail.DescriptionHeader" = "Description:";
+"CharacterDetail.ComicDetail" = "Comic Details";
+
+"ComicDetail.NameHeader" = "Name:";
+"ComicDetail.DescriptionHeader" = "Description:";
+"ComicDetail.PriceHeader" = "Price:";
+
+//MARK - Error alert
+"ErrorAlertController.Title" = "Error";
+"ErrorAlertController.Description" = "Please, try again later";
+"ErrorAlertController.OkAction" = "Ok";
+
+//MARK - No comic alert
+"NoComicAlertController.Title" = "Sorry";
+"NoComicAlertController.Description" = "No comic found!";
+"NoComicAlertController.OkAction" = "Ok";
